@@ -3,6 +3,7 @@
 import os.path
 import re
 import errno
+import sys
 
 def load_resume(resume_file_path):
 
@@ -15,5 +16,9 @@ def load_resume(resume_file_path):
             print("file exists, but isn't readable")
         elif e.errno == errno.ENOENT:
             print("files isn't readable because it isn't there")
-#TODO
-    print("completed")
+    return(file)
+
+if __name__ == "__main__":
+    load_resume(sys.argv[1])
+
+
