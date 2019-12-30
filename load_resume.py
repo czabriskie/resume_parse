@@ -1,0 +1,19 @@
+# This class will load a resume in a doc file or pdf and convert the contents
+# to a text document and return it
+import os.path
+import re
+import errno
+
+def load_resume(resume_file_path):
+
+    try:
+        file = open(resume_file_path, 'r')
+        file.close()
+    
+    except IOError as e:
+        if e.errno == errno.EACCES:
+            print("file exists, but isn't readable")
+        elif e.errno == errno.ENOENT:
+            print("files isn't readable because it isn't there")
+#TODO
+    print("completed")
